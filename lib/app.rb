@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './model/bookmarks.rb'
 
 class BookmarkManager < Sinatra::Base
 
@@ -7,7 +8,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
-    erb(:bookmarks)
+    @bookmarks = Bookmarks.new.print_all
   end
 
   run! if app_file == $0
