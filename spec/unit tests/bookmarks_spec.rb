@@ -1,19 +1,22 @@
 require 'model/bookmarks.rb'
 
 describe Bookmarks do
-  # it "responds to all method" do
-  #   expect(subject).to respond_to(:all)
-  # end
-
-  # it "returns default bookmarks" do
-  #   expect(subject.all).to eq (["http://www.makersacademy.com", "http://www.theguardian.com"])
-  # end
-
-  # it "connects PG to PostgreSQL bookmark_manager database" do
-  #   expect(subject.print_all).to eq ("Succesfully connected to database.")
-  # end
-
   it "retrieves all records from bookmarks table" do
-    expect(subject.print_all).to include("http://www.makersacademy.com")
+    #expect(subject.print_all).to include("http://www.makersacademy.com")
+    @bookmarks = Bookmarks.new.print_all
+    connection = PG.connect(dbname: 'bookmark_manager_test')
+
+    # Add the test data
+    connection.exec("INSERT INTO bookmark (url) VALUES ('http://www.makersacademy.com');")
+    connection.exec("INSERT INTO bookmark (url) VALUES('http://www.destroyallsoftware.com');")
+    connection.exec("INSERT INTO bookmark (url) VALUES('http://www.google.com');")
+
+    bookmarks = Bookmark.print_all
+
+    expect(bookmarks).to include('http://www.makersacademy.com')
+    expect(bookmarks).to include('http://www.destroyallsoftware.com')
+    expect(bookmarks).to include('http://www.google.com')
   end
 end
+
+

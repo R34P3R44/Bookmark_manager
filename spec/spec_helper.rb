@@ -1,4 +1,5 @@
 ENV['RACK_ENV'] = 'test'
+ENV['ENVIRONMENT'] = 'test'
 
 require 'simplecov'
 SimpleCov.start

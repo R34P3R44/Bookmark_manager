@@ -11,3 +11,8 @@ I would like view my bookmarks az a list.
 2. Create database like so <code>CREATE DATABASE bookmark_manager;</code>
 3. Connect to the database using <code>\c bookmark_manager;</code>
 4. Run the SQL query we have handily saved in the file <code>01_create_bookmarks_table.sql</code>
+
+**Test_Database Instructions**
+
+1. Type in the following command for creating a database <code>CREATE DATABASE "bookmark_manager_test";</code>
+2. Type in the following command for creating a table<code>CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));</code>

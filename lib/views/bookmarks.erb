@@ -1,4 +1,8 @@
+<h1>BookmarksList</h1>
 <ul>
-  <li>http://www.makersacademy.com</li>
-  <li>http://www.theguardian.com</li>
+  
+<ul>
+<% @bookmarks.select do |k, v| %>
+<li><%= "#{k}: #{v}" %></li>
+<% end %>
 </ul>
