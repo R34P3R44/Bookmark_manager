@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2020-10-19T15:46:53+01:00">2020-10-19T15:46:53+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2020-10-21T02:07:49+01:00">2020-10-21T02:07:49+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -29,8 +29,8 @@
      </span>
      covered at
      <span class="covered_strength">
-       <span class="yellow">
-         1.0
+       <span class="green">
+         1.12
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>25</b> relevant lines,
-    <span class="green"><b>25</b> lines covered</span> and
+    <b>26</b> relevant lines,
+    <span class="green"><b>26</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -84,11 +84,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#4b2a1aa80715b87283abc0bc5361ef92466e71ce" class="src_link" title="lib/model/bookmarks.rb">lib/model/bookmarks.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">5</td>
-            <td class="cell--number">3</td>
-            <td class="cell--number">3</td>
+            <td class="cell--number">10</td>
+            <td class="cell--number">6</td>
+            <td class="cell--number">6</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">1.00</td>
+            <td class="cell--number">1.50</td>
             
           </tr>
         
@@ -106,9 +106,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#f25dd5e61095e6f692b1a5c270cadbf4b127fb9d" class="src_link" title="spec/unit tests/bookmarks_spec.rb">spec/unit tests/bookmarks_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">11</td>
-            <td class="cell--number">6</td>
-            <td class="cell--number">6</td>
+            <td class="cell--number">19</td>
+            <td class="cell--number">4</td>
+            <td class="cell--number">4</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -330,8 +330,8 @@
     
 
     <div class="t-line-summary">
-      <b>3</b> relevant lines.
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>6</b> relevant lines.
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -349,18 +349,18 @@
 
             
 
-            <code class="ruby">class Bookmarks</code>
+            <code class="ruby">require &#39;pg&#39;</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="2">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="2">
+            
             
 
             
 
-            <code class="ruby">  def all</code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -371,12 +371,67 @@
 
             
 
-            <code class="ruby">    @all_bookmarks = [&quot;http://www.makersacademy.com&quot;, &quot;http://www.theguardian.com&quot;]</code>
+            <code class="ruby">class Bookmarks</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="4">
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  def print_all</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    con = PG.connect(:dbname =&gt; &quot;bookmark_manager&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="6">
+            
+            
+
+            
+
+            <code class="ruby">    &quot;Succesfully connected to database.&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    rs = con.exec &quot;SELECT * FROM bookmarks;&quot;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="4" data-linenumber="8">
+            <span class="hits">4</span>
+            
+
+            
+
+            <code class="ruby">    rs.map { |bookmark| bookmark[&#39;url&#39;] }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="9">
             
             
 
@@ -387,7 +442,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
+          <li class="never" data-hits="" data-linenumber="10">
             
             
 
@@ -612,8 +667,8 @@
     
 
     <div class="t-line-summary">
-      <b>6</b> relevant lines.
-      <span class="green"><b>6</b> lines covered</span> and
+      <b>4</b> relevant lines.
+      <span class="green"><b>4</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -658,24 +713,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="4">
+            
             
 
             
 
-            <code class="ruby">  it &quot;responds to all method&quot; do</code>
+            <code class="ruby">  # it &quot;responds to all method&quot; do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="5">
+            
             
 
             
 
-            <code class="ruby">    expect(subject).to respond_to(:all)</code>
+            <code class="ruby">  #   expect(subject).to respond_to(:all)</code>
           </li>
         </div>
       
@@ -686,7 +741,7 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  # end</code>
           </li>
         </div>
       
@@ -702,24 +757,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="8">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="8">
+            
             
 
             
 
-            <code class="ruby">  it &quot;returns default bookmarks&quot; do</code>
+            <code class="ruby">  # it &quot;returns default bookmarks&quot; do</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="9">
+            
             
 
             
 
-            <code class="ruby">    expect(subject.all).to eq ([&quot;http://www.makersacademy.com&quot;, &quot;http://www.theguardian.com&quot;])</code>
+            <code class="ruby">  #   expect(subject.all).to eq ([&quot;http://www.makersacademy.com&quot;, &quot;http://www.theguardian.com&quot;])</code>
           </li>
         </div>
       
@@ -730,12 +785,100 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  # end</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby">  # it &quot;connects PG to PostgreSQL bookmark_manager database&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">  #   expect(subject.print_all).to eq (&quot;Succesfully connected to database.&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">  # end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="16">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">  it &quot;retrieves all records from bookmarks table&quot; do</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="17">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">    expect(subject.print_all).to include(&quot;http://www.makersacademy.com&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby">  end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
             
             
 

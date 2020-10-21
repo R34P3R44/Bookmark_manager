@@ -1,5 +1,10 @@
+require 'pg'
+
 class Bookmarks
-  def all
-    @all_bookmarks = ["http://www.makersacademy.com", "http://www.theguardian.com"]
+  def print_all
+    con = PG.connect(:dbname => "bookmark_manager")
+    "Succesfully connected to database."
+    rs = con.exec "SELECT * FROM bookmarks;"
+    rs.map { |bookmark| bookmark['url'] }
   end
 end

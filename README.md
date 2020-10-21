@@ -1,17 +1,4 @@
-<<<<<<< HEAD
-## Creating a database:
-
-1. Connect to `psql`
-2. Create the database using the `psql command CREATE DATABASE bookmark_manager;`
-3. Connect to the database using the `pqsl command \c bookmark_manager;`
-4. Run the query we have saved in the file `01_create_bookmarks_table.sql`
-
-
-Show a list of bookmarks
-=======
 **User Stories**
->>>>>>> 8ebae3a14bffaa4aff4dcae203c568f31c872b45
-
 As a user.
 So I can see my favourite websites.
 I would like view my bookmarks az a list.
