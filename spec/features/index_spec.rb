@@ -4,12 +4,15 @@ feature 'index' do
     expect(page).to have_content("Bookmark Manager")
   end
 
-  feature 'index' do
-    scenario 'it shows the bookmarks as a list' do
-      visit "/bookmarks"
+  scenario 'page has a form' do
+    visit "/"
+    find_field("add-bookmark").visible?
+  end
 
-      expect(page).to have_content "http://www.makersacademy.com"
-      expect(page).to have_content "http://www.theguardian.com"
-    end
+  scenario 'user can submit a bookmark' do
+    visit('/')
+    fill_in 'add-bookmark', with: 'http://www.makersacademy.com'
+    click_button('Submit')
+    expect(page).to have_content('Thank you for adding a bookmark.')
   end
 end

@@ -1,7 +1,11 @@
 **User Stories**
 As a user.
 So I can see my favourite websites.
-I would like view my bookmarks az a list.
+I would like view my bookmarks as a list.
+
+As a user.
+So I can save a website for a later view.
+I would like to add a website as a bookmark.
 
 [domain model for bookmark list](/Bookmark_manager domain model.PNG)
 
