@@ -5,7 +5,7 @@ feature 'index' do
   end
 
   feature 'index' do
-    scenario 'it shows the bookmarsk as a list' do
+    scenario 'it shows the bookmarks as a list' do
       visit "/bookmarks"
 
       expect(page).to have_content "http://www.makersacademy.com"
