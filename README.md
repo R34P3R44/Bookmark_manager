@@ -9,7 +9,7 @@ I would like to add a website as a bookmark.
 
 [domain model for bookmark list](/Bookmark_manager domain model.PNG)
 
-**Database Instructions**
+**Database Instructions**<br>
 
 1. Connect to <code>psql</code>
 2. Create database like so <code>CREATE DATABASE bookmark_manager;</code>
