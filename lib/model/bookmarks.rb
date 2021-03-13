@@ -23,4 +23,8 @@ class Bookmarks
     result = connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}');")
     result
   end
+
+  def self.delete(url:)
+    result = connection.exec("DELETE FROM bookmarks (url VALUES('#{url}');")
+  end
 end
